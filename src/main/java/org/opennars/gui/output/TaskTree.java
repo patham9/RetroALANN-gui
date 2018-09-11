@@ -175,20 +175,12 @@ public class TaskTree extends NPanel implements EventObserver, Runnable {
         
         Set<Task> t = new HashSet();
         
-        if (includeTaskLinks) {
-            for (Concept c : mem) {
-                for (TaskLink tl : c.taskLinks) {
-                    t.add(tl.targetTask);
-                }
-            }
-        }
-        
         if (includeNewTasks)
-            t.addAll(mem.newTasks);
+            t.addAll(mem.inputTasks);
         
-        if (includeNovelTasks)
-            for (Task n : mem.novelTasks)
-                t.add(n);
+        if (includeTaskLinks)
+            for (Object n : mem.cyclingTasks.queue)
+                t.add((Task) n);
             
         return t;        
     }

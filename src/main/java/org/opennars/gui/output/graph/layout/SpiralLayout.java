@@ -59,14 +59,14 @@ public class SpiralLayout implements GraphDisplay<Item, Object> {
 
         int i = 0;
         try{
-            for(Concept c: nar.memory.concepts) {
+            for(Concept c: nar.memory.concepts.queue) {
                 if(x == c) { //not elegant and fast but k at least no term equals
                     break;
                 }
                 i++;
             }
         }catch(Exception ex){}
-        float count_elems = nar.memory.concepts.size();
+        float count_elems = nar.memory.concepts.queue.size();
         // float ratio = 30.0f*(0.10f + (((float)priority) / (1.0f)));
         float ratio = 30.0f*(0.10f + (((float)i) / (count_elems)));
         v.tx = (float) (ratio*Math.cos(ratio)) * spacing;

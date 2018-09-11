@@ -261,7 +261,7 @@ public class ConceptsPanel extends NPanel implements EventObserver, Runnable {
                 }
             }*/
 
-            if(concept.taskLinks.size()>0) {
+            /*if(concept.taskLinks.size()>0) {
                 conceptstr.append("TaskLinks:\n");
                 for(TaskLink tl : concept.taskLinks) {
                     String s = tl.targetTask.sentence.toString()+ " priority:" + tl.getBudget().getPriority();
@@ -270,7 +270,7 @@ public class ConceptsPanel extends NPanel implements EventObserver, Runnable {
                         conceptstr.append("\n");
                     }
                 }
-            }
+            }*/
 
             /*if(concept.termLinks.size()>0) {
                 conceptstr.append("\nTermLinks:\n");
@@ -296,6 +296,7 @@ public class ConceptsPanel extends NPanel implements EventObserver, Runnable {
                 beliefTime.setVisible(
                         beliefTime.update(time, bb));
             }
+            /*
             else {
                 subtitle.setText("");
                 if (!concept.questions.isEmpty() || !concept.quests.isEmpty())
@@ -308,9 +309,9 @@ public class ConceptsPanel extends NPanel implements EventObserver, Runnable {
                 qu.addAll(concept.questions);
                 qu.addAll(concept.quests);
                 questionChart.update( unmodifiableList( qu ) );
-            }
+            }*/
             
-            if (!concept.desires.isEmpty()) {
+            /*if (!concept.desires.isEmpty()) {
                 List<Task> ddT = concept.getDesires();
                 List<Sentence> dd=new ArrayList<Sentence>();
                 for(Task ts : ddT) {
@@ -329,7 +330,7 @@ public class ConceptsPanel extends NPanel implements EventObserver, Runnable {
                         desireTime.update(time, dd));
             } else {
                 desireTime.setVisible(false);
-            }
+            }*/
             String finalstr = sub+"\n\n"+conceptstr.toString();
             subtitle.setText(finalstr);
 

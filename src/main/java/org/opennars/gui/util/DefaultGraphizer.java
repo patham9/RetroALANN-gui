@@ -125,7 +125,7 @@ public class DefaultGraphizer implements NARGraph.Graphize {
             return;
         }
                 
-        if (includeTermLinks) {
+        /*if (includeTermLinks) {
             for (TermLink x : c.termLinks) {
                 termLinks.put(x, c);
             }
@@ -136,7 +136,7 @@ public class DefaultGraphizer implements NARGraph.Graphize {
                     taskLinks.put(x, c);
                 }
             }
-        }
+        }*/
         if (includeTermContent) {
             g.addVertex(t);
             g.addEdge(c, c.term, new NARGraph.TermContent());
@@ -159,7 +159,7 @@ public class DefaultGraphizer implements NARGraph.Graphize {
                 g.addEdge(term, belief.content, new TermBelief());*/
             }
         }
-        if (includeQuestions) {
+        /*if (includeQuestions) {
             for (final Task q : c.getQuestions()) {
                 if (c.term.equals(q.getTerm())) {
                     continue;
@@ -171,7 +171,7 @@ public class DefaultGraphizer implements NARGraph.Graphize {
                 g.addEdge(c, q, new NARGraph.TermQuestion());
                 onQuestion(q);
             }
-        }
+        }*/
     }
 
     void recurseTermComponents(NARGraph g, CompoundTerm c, int level) {
